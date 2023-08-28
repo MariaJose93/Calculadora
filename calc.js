@@ -3,38 +3,33 @@ const prompt = require('prompt-sync')(); //esto para poder usar prompt
 //Ajustar por termminal: npm install prompt-sync
 //identar control + k control + f
 
-var nombre, seguir;
-var n1, n2, suma;
+var seguir;
+var n1, n2, opcion;
 
 seguir = prompt("Bienvenido a la Calculadora, ¿quieres seguir? s/n:     ");
 if (seguir == "s") {
-    nombre = prompt("Ingrese nombre:        ");
-    opcion = parseInt(prompt("1.- Suma, 2.- Resta, 3.- Multiplicación, 4.- División:    "));
-    if (opcion== 1) {
-    console.log("Esto es suma");
-    n1 = parseInt(prompt("Ingrese número 1:     "));
-    n2 = parseFloat(prompt("Ingrese número 2:       "));
-    console.log(n1 + n2);
-    }
-    else if (opcion== 2) {
-        console.log("Esto es Resta");
-        n1 = parseInt(prompt("Ingrese número 1:     "));
-        n2 = parseFloat(prompt("Ingrese número 2:       "));
-        console.log(n1 - n2);
-        }
-        else if (opcion== 3) {
-            console.log("Esto es Multiplicación");
-            n1 = parseInt(prompt("Ingrese número 1:     "));
-            n2 = parseFloat(prompt("Ingrese número 2:       "));
-            console.log(n1 * n2);
+    console.log("1.- Suma \n2.- Resta \n3.- Multiplicación \n4.- División");
+    opcion = parseInt(prompt("Ingrese su opción:  "));
+    n1 = parseInt(prompt("Ingrese número 1:  "));
+    n2 = parseInt(prompt("Ingrese número 2:  "));
+    switch (opcion) {
+        case 1:
+            console.log("El resultado de su suma es:  ", n1 + n2);
+            break;
+        case 2:
+            console.log("El resultado de su resta es:  ", n1 - n2);
+            break;
+        case 3:
+            console.log("El resultado de su multiplicación es:  ", n1 * n2);
+            break;
+        case 4:
+            if (n2 == 0) {
+                console.log("No se puede dividir entre cero")
             }
-            else if (opcion== 4) {
-                console.log("Esto es División");
-                n1 = parseInt(prompt("Ingrese número 1:     "));
-                n2 = parseFloat(prompt("Ingrese número 2:       "));
-                console.log(n1 / n2);
-                }
-
+            else
+                console.log("El resultado de su división es:  ", n1 / n2);
+            break;
+    }
 }
 else
     console.log("Chau");
