@@ -3,8 +3,8 @@ const prompt = require('prompt-sync')(); //esto para poder usar prompt
 //Ajustar por termminal: npm install prompt-sync
 //identar control + k control + f
 
-var seguir;
-var n1, n2, opcion;
+// var seguir;
+// var n1, n2, opcion;
 
 seguir = prompt("Bienvenido a la Calculadora, ¿quieres seguir? s/n:     ");
 if (seguir == "s") {
@@ -33,3 +33,5 @@ if (seguir == "s") {
 }
 else
     console.log("Chau");
+
+//Calcuradora ejecutada con exito
